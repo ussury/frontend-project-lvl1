@@ -3,4 +3,3 @@
 import getBrainGames from '../src/cli.js';
 
 getBrainGames();
-
