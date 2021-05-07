@@ -12,7 +12,7 @@ const helloUser = (rule) => {
   return userName;
 };
 
-export const play = (rule, foo) => {
+export const play = (rule, addGameData) => {
   const userName = helloUser(rule);
 
   const iter = (acc) => {
@@ -20,7 +20,7 @@ export const play = (rule, foo) => {
       return console.log(`Congratulations, ${userName}!`);
     }
 
-    const result = foo();
+    const result = addGameData();
     const response = userResponse();
 
     if (result === response) {
