@@ -4,7 +4,12 @@ const getUserName = () => readlineSync.question('May I have your name? ');
 const userResponse = () => readlineSync.question('Your answer: ');
 export const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
 
-const helloUser = (rule) => {
+export const getBrainGames = (rule) => {
+  if (rule === undefined) {
+    console.log('Welcome to the Brain Games!');
+    const userName = getUserName();
+    return console.log(`Hello, ${userName}!`);
+  }
   console.log('Welcome to the Brain Games!');
   const userName = getUserName();
   console.log(`Hello, ${userName}!`);
@@ -13,7 +18,7 @@ const helloUser = (rule) => {
 };
 
 export const play = (rule, addGameData) => {
-  const userName = helloUser(rule);
+  const userName = getBrainGames(rule);
 
   const iter = (acc) => {
     if (acc === 0) {
